@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Imóveis</title>
+    <script src="property.js"></script>
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <header>
+            <p class="title is-2 is-spaced has-text-link">Cadastro de Imóveis</p>
+        </header>
+
+    <div>
+        <form onsubmit="app.addProperty()">
+            <p>
+                <label class="label">Tipo: </label>
+            </p>
+        <div class="select is-medium">
+            <select name="kind">
+                <option value="Apartamento">Apartamento</option>
+                <option value="Casa">Casa</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <p>
+            <label class="label ">Área: (m²)</label>
+            <input type="number" class="input is-info" name="area" step="any" min="0"/>
+        </p>
+    </div>
+
+        <div>
+            <label class="checkbox label">
+                <input type="checkbox" name="rented">
+                Alugado
+            </label>
+        </div>
+
+    <div>
+        <p>
+            <div class="field is-grouped">
+                <div class="control">
+                <button class="button is-link y" type="submit">Salvar</button>
+                </div>
+            </div>
+        </p>
+    </div>
+
+        <div>
+            <label class="label">Imóveis Cadastrado:</label>
+
+            <ul id="properties"></ul>
+        </div>
+    </section>
+</body>
+</html>
